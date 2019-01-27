@@ -5,6 +5,7 @@ RSpec.describe CommentsController, type: :controller do
   login_user
 
   describe "GET top_commenters" do
+    render_views
     let!(:user) { FactoryBot.create(:user) }
     let!(:movie) { FactoryBot.create(:movie) }
 
@@ -18,9 +19,14 @@ RSpec.describe CommentsController, type: :controller do
       get :top_commenters
       expect(response.content_type).to eq 'text/html'
     end
+
+    it "should have header" do
+      get :top_commenters
+      expect(response.body).to match /<h1>Top Commenters/im
+    end
   end
 
-  context 'Actions' do
+  context "Actions" do
     let!(:movie) { FactoryBot.create(:movie) }
 
     describe "POST comment" do

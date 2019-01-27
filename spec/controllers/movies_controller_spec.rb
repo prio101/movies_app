@@ -8,7 +8,7 @@ RSpec.describe MoviesController, type: :controller do
     let!(:movie) { FactoryBot.create(:movie) }
     let(:attributes) { FactoryBot.attributes_for(:movie) }
 
-    context '#movie_list' do
+    context "#movie_list" do
 
       before(:each) do
         get :movies_list
@@ -19,7 +19,7 @@ RSpec.describe MoviesController, type: :controller do
       end
 
       it "should return content type json" do
-        expect(response.content_type).to eq 'application/json'
+        expect(response.content_type).to eq "application/json"
       end
 
       it "should return a movie data" do
@@ -43,7 +43,7 @@ RSpec.describe MoviesController, type: :controller do
       end
 
       it "should return content type json" do
-        expect(response.content_type).to eq 'application/json'
+        expect(response.content_type).to eq "application/json"
       end
 
       it "should return a movie data" do
@@ -66,7 +66,7 @@ RSpec.describe MoviesController, type: :controller do
       end
 
       it "should return content type json" do
-        expect(response.content_type).to eq 'application/json'
+        expect(response.content_type).to eq "application/json"
       end
 
       it "should return a movie data" do
